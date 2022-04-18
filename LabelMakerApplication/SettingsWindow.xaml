@@ -1,0 +1,36 @@
+﻿<Window x:Class="LabelMakerApplication.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LabelMakerApplication"
+        mc:Ignorable="d"
+        Title="Settings" Height="540" Width="400">
+
+    <Window.Background>
+        <ImageBrush ImageSource="/SalesOrderLabelBackground.png"/>
+    </Window.Background>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="313*"/>
+            <ColumnDefinition Width="124*"/>
+        </Grid.ColumnDefinitions>
+        <GroupBox Header="Company Name" Grid.Row="0" Grid.Column="0" MaxHeight="75" Margin="0,0,10,394" Grid.ColumnSpan="2">
+            <TextBox x:Name="TextBoxCompanyName" Width="auto" Height="25"/>
+        </GroupBox>
+        <GroupBox Header="Path to Company Logo (.jpg or .png)" Grid.Row="0" Grid.Column="0" MaxHeight="75" Margin="0,88,10,306" Grid.ColumnSpan="2">
+            <TextBox x:Name="TextBoxPathToLogo" Width="auto" Height="25" Margin="0,0,40,0"/>
+            
+        </GroupBox>
+        <Button Name="ButtonFileDialog" Height="25" Width="25" Margin="59,121,21,328" Grid.Column="1" Click="ButtonFileDialog_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/folder icon.webp"/>
+            </Button.Background>
+        </Button>
+        <Button Name="ButtonSaveSettings"  Content="Save" Margin="25,199,120,278" Click="ButtonSaveSettings_Click"/>
+        <Button Name="ButtonCancelSettings" Content="Cancel" Margin="227,199,28,278" Grid.ColumnSpan="2" Click="ButtonCancelSettings_Click"/>
+
+
+
+    </Grid>
+</Window>

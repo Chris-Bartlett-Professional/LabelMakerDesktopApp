@@ -1,0 +1,86 @@
+﻿<Window x:Class="LabelMakerApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LabelMakerApplication"
+        mc:Ignorable="d"
+        Title="EmmabayEnterprisesLabelCreation.exe" Height="450" Width="800" MinHeight="450" MinWidth="800" Closed="Window_Closed">
+    <Window.Background>
+        <ImageBrush ImageSource="/SalesOrderLabelBackground.png"/>
+    </Window.Background>
+
+    <Grid Name ="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".25*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Name="GridTopRunner" Height="82"  VerticalAlignment="Top" HorizontalAlignment="Stretch" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".25*" />
+                <ColumnDefinition Width="1*" MinWidth="200"/>
+                <ColumnDefinition Width=".15*" />
+            </Grid.ColumnDefinitions>
+
+            <Image Name="ImageLogo" Grid.Column="0" MinHeight="40" MinWidth="40"/>
+            <Button Name="ButtonSettings" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2" MinHeight="40" MinWidth="40" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="ButtonSettings_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="C:\Users\v-cbartlett\source\repos\LabelMakerApplication\LabelMakerApplication\img\settingsImage.png"/>
+                </Button.Background>
+            </Button>
+        </Grid>
+
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" MinWidth="200"/>
+                <ColumnDefinition Width="1*" MinWidth="200"/>
+                <ColumnDefinition Width="1*" MinWidth="200"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid x:Name="innerGrid" Grid.Row="0" Grid.ColumnSpan="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <GroupBox Header="Date of Production" Grid.Row="0" Grid.Column="0" MaxHeight="75">
+                    <TextBox Name="TextBoxProductionDate" Width="auto" Height="25"/>
+                </GroupBox>
+                <GroupBox Header="Expiry Date" Grid.Row="0" Grid.Column ="1" MaxHeight="75">
+                    <TextBox Name="TextBoxExpiryDate" Width="auto" Height="25"/>
+                </GroupBox>
+            </Grid>
+
+            <GroupBox Header="Batch Number" Grid.Row="1" Grid.Column="0" MaxHeight="75">
+                <TextBox Name="TextBoxBatchNumber" Width="auto" Height="25"/>
+            </GroupBox>
+            <GroupBox Header="Serial Number" Grid.Row="1" Grid.Column="1" MaxHeight="75">
+                <TextBox Name="TextBoxSerialNumber" Width="auto" Height="25"/>
+            </GroupBox>
+            <GroupBox Header="Product Number" Grid.Row="1" Grid.Column="2" MaxHeight="75">
+                <TextBox Name="TextBoxProductNumber" Width="auto" Height="25"/>
+            </GroupBox>
+
+            <Button Name="ButtonPrintPreview" Content="Print Preview" Grid.Row="2" Grid.ColumnSpan="2"  Height="25" Width="150" MinWidth="100" Click="ButtonPrintPreview_Click"/>
+            <Button Name="ButtonPrint" Content="Print"  Height="25" Width="150" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" MinWidth="100" Click="ButtonPrint_Click"/>
+
+            <Label Name="LabelError" HorizontalAlignment="Center" Content="Please fill out all fields before previewing or printing." MinHeight="30" MinWidth="100" Grid.Row="3" Grid.ColumnSpan="3" Foreground="#FFFDFF00" Visibility="Hidden"/>
+
+        </Grid>
+    </Grid>
+
+
+
+
+</Window>
